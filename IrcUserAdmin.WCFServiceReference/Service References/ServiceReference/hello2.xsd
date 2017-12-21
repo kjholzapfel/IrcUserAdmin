@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/IrcUserAdmin.Slave.Contracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/IrcUserAdmin.Slave.Contracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Hosts" nillable="true" type="tns:ArrayOfHost" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="ArrayOfHost">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Host" nillable="true" type="tns:Host" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHost" nillable="true" type="tns:ArrayOfHost" />
+  <xs:complexType name="Host">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HostAdress" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Host" nillable="true" type="tns:Host" />
+  <xs:complexType name="SlaveResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Exception" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponseOk" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SlaveResponse" nillable="true" type="tns:SlaveResponse" />
+  <xs:complexType name="UserList">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="UserList" nillable="true" type="tns:UserList" />
+</xs:schema>

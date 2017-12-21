@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{031D311B-BADD-44B6-A69E-69A796DF353D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IrcUserAdmin</RootNamespace>
+    <AssemblyName>IrcUserAdmin</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Extras.NHibernate">
+      <HintPath>..\packages\Autofac.Extras.NHibernate.3.0.1\lib\net40\Autofac.Extras.NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging">
+      <HintPath>..\packages\Common.Logging.2.1.2\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentNHibernate">
+      <HintPath>..\packages\FluentNHibernate.1.4.0.0\lib\net35\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Meebey.SmartIrc4net, Version=0.4.5.0, Culture=neutral, PublicKeyToken=7868485fbf407e0f, processorArchitecture=MSIL">
+      <HintPath>..\packages\SmartIrc4net.1.1\lib\Meebey.SmartIrc4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Npgsql.2.2.3\lib\net45\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\packages\MySql.Data.6.9.3\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NHibernate.4.0.1.4000\lib\net40\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>..\packages\Npgsql.2.2.3\lib\net45\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz">
+      <HintPath>..\packages\Quartz.2.2.3\lib\net40\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.94.0\lib\net45\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\CommandName.cs" />
+    <Compile Include="Commands\Common\UserDisplay.cs" />
+    <Compile Include="Commands\EmptyEnum.cs" />
+    <Compile Include="Commands\CommandType.cs" />
+    <Compile Include="Commands\Modules\AddGroupChannel.cs" />
+    <Compile Include="Commands\Modules\AddHost.cs" />
+    <Compile Include="Commands\Modules\AddUserToGroup.cs" />
+    <Compile Include="Commands\Modules\ChangePassword.cs" />
+    <Compile Include="Commands\Modules\DeleteGroup.cs" />
+    <Compile Include="Commands\Modules\DeleteKillUser.cs" />
+    <Compile Include="Commands\Modules\DelUser.cs" />
+    <Compile Include="Commands\Modules\JoinChannels.cs" />
+    <Compile Include="Commands\Modules\KillUser.cs" />
+    <Compile Include="Commands\Modules\RemoveHost.cs" />
+    <Compile Include="Commands\Modules\RemoveUserFromGroup.cs" />
+    <Compile Include="Commands\Modules\SaMode.cs" />
+    <Compile Include="Commands\Modules\IrcSecuritySweep.cs" />
+    <Compile Include="Commands\Modules\SetAutoJoin.cs" />
+    <Compile Include="Commands\Modules\SetHost.cs" />
+    <Compile Include="Commands\Modules\SetVHost.cs" />
+    <Compile Include="Commands\Modules\ShowGroupDetails.cs" />
+    <Compile Include="Commands\Modules\ShowOnlineUsers.cs" />
+    <Compile Include="Commands\Modules\ShowUsers.cs" />
+    <Compile Include="Commands\Modules\UserInfo.cs" />
+    <Compile Include="Commands\OperCommands\IOperCommand.cs" />
+    <Compile Include="Commands\IrcCommands.cs" />
+    <Compile Include="Commands\Modules\AddGroup.cs" />
+    <Compile Include="Commands\Modules\AddUser.cs" />
+    <Compile Include="Commands\Modules\AddUserAsAdmin.cs" />
+    <Compile Include="Commands\Modules\Announce.cs" />
+    <Compile Include="Commands\Modules\Connect.cs" />
+    <Compile Include="Commands\Modules\Help.cs" />
+    <Compile Include="Commands\IIrcCommand.cs" />
+    <Compile Include="Commands\IIrcCommands.cs" />
+    <Compile Include="Commands\Modules\RemoveUserAsAdmin.cs" />
+    <Compile Include="Commands\Modules\ShowGroups.cs" />
+    <Compile Include="Commands\OperCommands\KillOperCommmand.cs" />
+    <Compile Include="Commands\OperCommands\SajoinOperCommmand.cs" />
+    <Compile Include="Commands\OperCommands\SaModeOperCommmand.cs" />
+    <Compile Include="Commands\OperCommands\SaModeOpsOperCommmand.cs" />
+    <Compile Include="Commands\OperCommands\VhostOperCommmand.cs" />
+    <Compile Include="CompositionRoot\Components\ConfigModule.cs" />
+    <Compile Include="CompositionRoot\Components\IrcModule.cs" />
+    <Compile Include="CompositionRoot\Components\NhibernateSlaveModule.cs" />
+    <Compile Include="CompositionRoot\Components\QuartzModule.cs" />
+    <Compile Include="CompositionRoot\Components\WcfSlaveModule.cs" />
+    <Compile Include="ConfigSettings\ConfigClasses\SoapSlave.cs" />
+    <Compile Include="ConfigSettings\DbBootStrapAddUsers.cs" />
+    <Compile Include="ConfigSettings\BotConfig.cs" />
+    <Compile Include="ConfigSettings\ConfigClasses\BotSettings.cs" />
+    <Compile Include="ConfigSettings\ConfigClasses\BuildInDbUsers.cs" />
+    <Compile Include="ConfigSettings\ConfigClasses\DbType.cs" />
+    <Compile Include="ConfigSettings\ConfigClasses\NhibernateSettings.cs" />
+    <Compile Include="ConfigSettings\ConfigClasses\Settings.cs" />
+    <Compile Include="ConfigSettings\ConfigClasses\Slaves.cs" />
+    <Compile Include="ConfigSettings\DbBootstrap.cs" />
+    <Compile Include="ConfigSettings\IBotConfig.cs" />
+    <Compile Include="ConfigSettings\IDbBootstrap.cs" />
+    <Compile Include="ConfigSettings\IDbBootstrapAddUsers.cs" />
+    <Compile Include="IrcBot\BotRuntime.cs" />
+    <Compile Include="IrcBot\IIrcReadWriteExchange.cs" />
+    <Compile Include="IrcBot\IrcWriteContext.cs" />
+    <Compile Include="IrcBot\MessageOrigin.cs" />
+    <Compile Include="IrcBot\NoticeTypeInternal.cs" />
+    <Compile Include="Slaves\AddHostsCommand.cs" />
+    <Compile Include="Slaves\AddUserCommand.cs" />
+    <Compile Include="Slaves\ChangePasswordCommand.cs" />
+    <Compile Include="Slaves\DeleteHostsCommand.cs" />
+    <Compile Include="Slaves\DeleteUserCommand.cs" />
+    <Compile Include="Slaves\ExcuteSlaveCommandsContext.cs" />
+    <Compile Include="Slaves\ExecutionContext.cs" />
+    <Compile Include="Slaves\ExecutionContextFactory.cs" />
+    <Compile Include="Slaves\ISlaveCommand.cs" />
+    <Compile Include="Slaves\ISlaveExecutor.cs" />
+    <Compile Include="NHibernate\IUserDao.cs" />
+    <Compile Include="NHibernate\Persistence.cs" />
+    <Compile Include="Quartz\AutofacJobFactory.cs" />
+    <Compile Include="Quartz\DailyJob.cs" />
+    <Compile Include="Quartz\IQuartzScheduler.cs" />
+    <Compile Include="Quartz\QuartzScheduler.cs" />
+    <Compile Include="Slaves\SlaveExecutor.cs" />
+    <Compile Include="Tools\EnumHelper.cs" />
+    <Compile Include="IrcBot\IBotRuntime.cs" />
+    <Compile Include="IrcBot\IIrcEventHandler.cs" />
+    <Compile Include="IrcBot\IrcCommandContext.cs" />
+    <Compile Include="IrcBot\IrcReadWriteExchange.cs" />
+    <Compile Include="IrcBot\NoticeTypes.cs" />
+    <Compile Include="KeyListener\IKeyboardListener.cs" />
+    <Compile Include="IrcBot\IrcEventHandler.cs" />
+    <Compile Include="KeyListener\KeyboardListener.cs" />
+    <Compile Include="Commands\AbstractIrcCommand.cs" />
+    <Compile Include="ConfigSettings\AppConfigSettings.cs" />
+    <Compile Include="CompositionRoot\AutofacCompositionRoot.cs" />
+    <Compile Include="ConfigSettings\ConfigMethods.cs" />
+    <Compile Include="CompositionRoot\Components\NHibernateComponentModule.cs" />
+    <Compile Include="CompositionRoot\Components\RuntimeModule.cs" />
+    <Compile Include="IrcBot\OperCommands.cs" />
+    <Compile Include="NHibernate\UserDao.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\Extensions.cs" />
+    <Compile Include="Tools\HashFunctions.cs" />
+    <Compile Include="Tools\XmlSerializerHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="job_scheduling_data_2_0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IrcUserAdmin.Common\IrcUserAdmin.Common.csproj">
+      <Project>{599331DE-F4E8-4579-82F0-E1FB948F9B91}</Project>
+      <Name>IrcUserAdmin.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IrcUserAdmin.Entities.Slave\IrcUserAdmin.Entities.Slave.csproj">
+      <Project>{75AF85E0-89C9-44C5-920D-B57CF64B04B1}</Project>
+      <Name>IrcUserAdmin.Entities.Slave</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IrcUserAdmin.Entities\IrcUserAdmin.Entities.csproj">
+      <Project>{8a4fc30a-c508-447b-b342-07ed3be5053c}</Project>
+      <Name>IrcUserAdmin.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IrcUserAdmin.SlavePersistance\IrcUserAdmin.SlavePersistance.csproj">
+      <Project>{84EF4154-AF34-41FF-A230-593F6F18A7CF}</Project>
+      <Name>IrcUserAdmin.SlavePersistance</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IrcUserAdmin.WCFServiceReference\IrcUserAdmin.WCFServiceReference.csproj">
+      <Project>{85251A28-6B50-4B2B-A01E-5B5A8B6BB431}</Project>
+      <Name>IrcUserAdmin.WCFServiceReference</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.94.0\build\net45\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.94.0\build\net45\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.94.0\build\net45\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.94.0\build\net45\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

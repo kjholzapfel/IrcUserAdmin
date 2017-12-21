@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="cadc79b6-fcc7-4e3d-8462-ac3f1d66e13b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://localhost:8080/hello" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="hello.disco" MetadataType="Disco" ID="38a3b1a7-8a9a-4da3-af4f-65dedc51831c" SourceId="1" SourceUrl="https://localhost:8080/hello?disco" />
+    <MetadataFile FileName="hello.wsdl" MetadataType="Wsdl" ID="71632229-7d00-4a0d-876f-7ae3a6339b0a" SourceId="1" SourceUrl="https://localhost:8080/hello?wsdl=wsdl0" />
+    <MetadataFile FileName="hello.xsd" MetadataType="Schema" ID="53299498-2a8a-41fe-acd0-e6364c07b68a" SourceId="1" SourceUrl="https://localhost:8080/hello?xsd=xsd0" />
+    <MetadataFile FileName="hello1.xsd" MetadataType="Schema" ID="7c6f42c1-810b-47c9-a325-e5a89d89f1fd" SourceId="1" SourceUrl="https://localhost:8080/hello?xsd=xsd1" />
+    <MetadataFile FileName="hello2.xsd" MetadataType="Schema" ID="2acfa482-138b-4a81-9af6-4f8b4fefc322" SourceId="1" SourceUrl="https://localhost:8080/hello?xsd=xsd2" />
+    <MetadataFile FileName="UserAdmin.wsdl" MetadataType="Wsdl" ID="1fc447bb-b568-469a-a3e4-d52d36c7b511" SourceId="1" SourceUrl="https://localhost:8080/hello?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

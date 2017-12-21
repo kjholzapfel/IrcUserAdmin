@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://ircuseradmin.net " xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ircuseradmin.net " xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://ircuseradmin.net /Imports">
+      <xsd:import schemaLocation="https://localhost:8080/hello?xsd=xsd0" namespace="http://ircuseradmin.net" />
+      <xsd:import schemaLocation="https://localhost:8080/hello?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://localhost:8080/hello?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/IrcUserAdmin.Slave.Contracts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IUserAdmin_AddUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUser" />
+  </wsdl:message>
+  <wsdl:message name="IUserAdmin_AddUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserAdmin_ChangePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="IUserAdmin_ChangePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserAdmin_DeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="IUserAdmin_DeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserAdmin_ClearDatabase_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClearDatabase" />
+  </wsdl:message>
+  <wsdl:message name="IUserAdmin_ClearDatabase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClearDatabaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserAdmin_GetUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsers" />
+  </wsdl:message>
+  <wsdl:message name="IUserAdmin_GetUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserAdmin_AddHosts_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddHosts" />
+  </wsdl:message>
+  <wsdl:message name="IUserAdmin_AddHosts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddHostsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserAdmin_RemoveHosts_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveHosts" />
+  </wsdl:message>
+  <wsdl:message name="IUserAdmin_RemoveHosts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveHostsResponse" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="false" name="IUserAdmin">
+    <wsdl:operation name="AddUser">
+      <wsdl:input wsam:Action="http://ircuseradmin.net /IUserAdmin/AddUser" message="tns:IUserAdmin_AddUser_InputMessage" />
+      <wsdl:output wsam:Action="http://ircuseradmin.net /IUserAdmin/AddUserResponse" message="tns:IUserAdmin_AddUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input wsam:Action="http://ircuseradmin.net /IUserAdmin/ChangePassword" message="tns:IUserAdmin_ChangePassword_InputMessage" />
+      <wsdl:output wsam:Action="http://ircuseradmin.net /IUserAdmin/ChangePasswordResponse" message="tns:IUserAdmin_ChangePassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsam:Action="http://ircuseradmin.net /IUserAdmin/DeleteUser" message="tns:IUserAdmin_DeleteUser_InputMessage" />
+      <wsdl:output wsam:Action="http://ircuseradmin.net /IUserAdmin/DeleteUserResponse" message="tns:IUserAdmin_DeleteUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearDatabase">
+      <wsdl:input wsam:Action="http://ircuseradmin.net /IUserAdmin/ClearDatabase" message="tns:IUserAdmin_ClearDatabase_InputMessage" />
+      <wsdl:output wsam:Action="http://ircuseradmin.net /IUserAdmin/ClearDatabaseResponse" message="tns:IUserAdmin_ClearDatabase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <wsdl:input wsam:Action="http://ircuseradmin.net /IUserAdmin/GetUsers" message="tns:IUserAdmin_GetUsers_InputMessage" />
+      <wsdl:output wsam:Action="http://ircuseradmin.net /IUserAdmin/GetUsersResponse" message="tns:IUserAdmin_GetUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddHosts">
+      <wsdl:input wsam:Action="http://ircuseradmin.net /IUserAdmin/AddHosts" message="tns:IUserAdmin_AddHosts_InputMessage" />
+      <wsdl:output wsam:Action="http://ircuseradmin.net /IUserAdmin/AddHostsResponse" message="tns:IUserAdmin_AddHosts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveHosts">
+      <wsdl:input wsam:Action="http://ircuseradmin.net /IUserAdmin/RemoveHosts" message="tns:IUserAdmin_RemoveHosts_InputMessage" />
+      <wsdl:output wsam:Action="http://ircuseradmin.net /IUserAdmin/RemoveHostsResponse" message="tns:IUserAdmin_RemoveHosts_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

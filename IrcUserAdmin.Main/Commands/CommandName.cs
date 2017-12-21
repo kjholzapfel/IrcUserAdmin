@@ -1,0 +1,34 @@
+namespace IrcUserAdmin.Commands
+{
+    public enum CommandName
+    {
+        AddGroup,
+        AddGroupChannel,
+        AddUser,
+        AdduserAdmin,
+        Announce,
+        Connect,
+        ChangePassword,
+        DelUser,
+        DeleteGroup,
+        Help,
+        KillUser,
+        RemoveUserAdmin,
+        SaMode,
+        ShowGroups,
+        ShowUsers,
+        UserInfo,
+        DeleteKillUser,
+        IrcSecuritySweep,
+        AddUserToGroup,
+        RemoveUserFromGroup,
+        ShowGroupDetails,
+        JoinChannels,
+        SetHost,
+        SetAutoJoin,
+        SetVHost,
+        AddHost,
+        RemoveHost,
+        ShowOnlineUsers
+    }
+}
